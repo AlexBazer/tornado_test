@@ -1,0 +1,10 @@
+{
+    "search_fields":[
+        {"name": "publisher_id", "reference_table": "publishers"},
+        {"name": "network_id", "reference_table": "networks"},
+        {"name": "websites_id", "reference_table": "websites"},
+        {"name": "domains"},
+        {"name": "os_name" },
+        {"name": "device_name"}
+    ]
+}
