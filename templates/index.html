@@ -6,17 +6,26 @@
     </head>
     <body>
         <h1>Hello from index!</h1>
-        {% for field in fields %}
-            {% if type(fields[field]) == list %}
-            <select class="" name="">
-                <option value="none">{{field}}</option>
-                {% for entry in fields[field] %}
-                <option value="option">option</option>
+        <form action="/search/" method="get">
+            {% for field in fields %}
+                {% if type(fields[field]) == list %}
+                <label>
+                    {{field}}
+                    <select class="" name="{{field}}">
+                        <option value="">None</option>
+                        {% for entry in fields[field] %}
+                        <option value="{{entry['id']}}">{{entry['name']}}</option>
+                        {% end %}
+                    </select><br>
+                </label>
+                {% else %}
+                <label>
+                    {{field}}
+                    <input type="text" name="{{field}}" value=""><br>
+                </label>
                 {% end %}
-            </select>
-            {% else %}
-            <input type="text" name="name" value="">
             {% end %}
-        {% end %}
+            <button type="submit">Search</button>
+        </form>
     </body>
 </html>

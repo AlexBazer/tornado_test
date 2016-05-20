@@ -6,5 +6,29 @@
     </head>
     <body>
         <h1>Hello from result!</h1>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>network</th>
+                <th>publisher</th>
+                <th>website</th>
+                <th>domains</th>
+                <th>os name</th>
+                <th>device name</th>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{row['id']}}</td>
+                    <td>{{row['network']}}</td>
+                    <td>{{row['publisher']}}</td>
+                    <td>{{row['website']}}</td>
+                    <td>{{row['domains']}}</td>
+                    <td>{{row['os_name']}}</td>
+                    <td>{{row['device_name']}}</td>
+                </tr>
+                {% end %}
+            </tbody>
+        </table>
     </body>
 </html>
