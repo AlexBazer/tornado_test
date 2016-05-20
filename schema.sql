@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS imonomy_data;
+CREATE TABLE imonomy_data (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    network_id INT NOT NULL REFERENCES networks(id),
+    publisher_id INT NOT NULL REFERENCES publishers(id),
+    website_id INT NOT NULL REFERENCES websites(id),
+    domains VARCHAR(512) NOT NULL,
+    os_name VARCHAR(512) NOT NULL,
+    device_name VARCHAR(512) NOT NULL
+);
+
+DROP TABLE IF EXISTS networks;
+CREATE TABLE networks (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(512) NOT NULL
+);
+
+DROP TABLE IF EXISTS publishers;
+CREATE TABLE publishers (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(512) NOT NULL
+);
+
+DROP TABLE IF EXISTS websites;
+CREATE TABLE websites (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(512) NOT NULL
+);
